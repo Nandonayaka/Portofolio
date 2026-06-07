@@ -1,1 +1,10 @@
 @import "tailwindcss";
+@import "@fontsource/cormorant-garamond";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+}
+
+body {
+  font-family: var(--font-serif);
+}
