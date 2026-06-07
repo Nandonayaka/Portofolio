@@ -11,9 +11,14 @@ const GalleryPage = () => {
         <div className="w-full px-6 md:px-12 text-black relative group/section pb-20">
             {/* Header Atas */}
             <div className="flex flex-col border-b border-blue-200 pb-6 mb-12">
-                <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-blue-900 uppercase">
-                    Projects
-                </h2>
+                <div className="flex justify-center md:justify-start">
+                    <img
+                        src="/images/text-projects.svg"
+                        alt="Portfolio Text"
+                        className="w-48 md:w-64"
+                        draggable="false"
+                    />
+                </div>
                 <div className="flex justify-between items-center mt-2">
                     <p className="text-xs md:text-sm text-blue-400 uppercase tracking-[0.3em] font-medium">
                         / Featured Works 2024-2026 /
