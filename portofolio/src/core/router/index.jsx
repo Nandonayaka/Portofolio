@@ -4,6 +4,7 @@ import DashboardPage from "../../view/pages/dashboard/DashboardPage";
 import AboutPage from "../../view/pages/about/AboutPage";
 import GalleryPage from "../../view/pages/gallery/GalleryPage";
 import ExperiencePage from "../../view/pages/experiences/ExperiencePage";
+import MoreAboutMe from "../../view/pages/moreinfo/MoreAboutMe";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: "experience",
                 element: <ExperiencePage />,
+            },
+            {
+                path: "moreinfo",
+                element: <MoreAboutMe />,
             },
         ],
     },

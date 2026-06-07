@@ -21,9 +21,9 @@ const experiences = [
 
 const ExperiencePage = () => {
   return (
-    <section className="w-full py-20 px-6 md:px-12 bg-[#f5f8ff] mb-[100px]">
+    <section className="w-full py-20 px-6 md:px-12 mb-[100px]">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
-        
+
         {/* Left Side */}
         <div>
           <h2 className="text-xs tracking-[0.3em] uppercase text-slate-500 mb-12">

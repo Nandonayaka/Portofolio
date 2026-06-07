@@ -1,6 +1,7 @@
 import AboutPage from "../about/AboutPage";
 import GalleryPage from "../gallery/GalleryPage";
 import ExperiencePage from "../experiences/ExperiencePage";
+import MoreAboutMe from "../moreinfo/MoreAboutMe";
 
 const DashboardPage = () => {
     const scrollToAbout = () => {
@@ -48,14 +49,19 @@ const DashboardPage = () => {
                 <AboutPage />
             </div>
 
+            {/* Gallery Section */}
+            <div id="gallery-section" className="">
+                <GalleryPage />
+            </div>
+
             {/* Experience Section */}
             <div id="experience-section" className="">
                 <ExperiencePage />
             </div>
 
-            {/* Gallery Section */}
-            <div id="gallery-section" className="">
-                <GalleryPage />
+            {/* More Info Section */}
+            <div id="moreinfo-section" className="">
+                <MoreAboutMe />
             </div>
         </div>
     );
