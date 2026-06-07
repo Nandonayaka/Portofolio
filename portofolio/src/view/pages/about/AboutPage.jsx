@@ -3,7 +3,7 @@ import AboutParticle from "./particle/AboutParticle";
 
 const AboutPage = () => {
     return (
-        <div className="max-h-screen mb-[10%] px-4 md:px-16 relative overflow-hidden">
+        <div className="max-h-screen mb-[8%] px-4 md:px-16 relative overflow-hidden">
             {/* Background Stars/Sparkles */}
             <AboutParticle />
 
