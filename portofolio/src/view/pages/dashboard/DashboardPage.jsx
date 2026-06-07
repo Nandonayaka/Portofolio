@@ -1,4 +1,5 @@
 import AboutPage from "../about/AboutPage";
+import GalleryPage from "../gallery/GalleryPage";
 
 const DashboardPage = () => {
     const scrollToAbout = () => {
@@ -42,12 +43,18 @@ const DashboardPage = () => {
             </div>
 
             {/* About Section */}
-            <div id="about-section" className="bg-[#FDFBF7]">
+            <div id="about-section" className="">
                 <AboutPage />
+            </div>
+
+            {/* Gallery Section */}
+            <div id="gallery-section" className="">
+                <GalleryPage />
             </div>
         </div>
     );
 };
+
 
 export default DashboardPage;
 

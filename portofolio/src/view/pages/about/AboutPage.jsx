@@ -1,8 +1,12 @@
 import Button from "../../components/Button";
+import AboutParticle from "./particle/AboutParticle";
 
 const AboutPage = () => {
     return (
-        <div className="min-h-screen px-4 md:px-16 bg-[#FDFBF7]">
+        <div className="max-h-screen mb-[10%] px-4 md:px-16 relative overflow-hidden">
+            {/* Background Stars/Sparkles */}
+            <AboutParticle />
+
             {/* Section Utama: Kiri Foto, Kanan Deskripsi */}
             <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16">
 
