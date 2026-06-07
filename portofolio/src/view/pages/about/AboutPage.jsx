@@ -13,6 +13,7 @@ const AboutPage = () => {
                             src="/public/images/me.svg"
                             alt="Portfolio Text"
                             className="max-w-[90vw] md:max-w-full shadow-xl"
+                            draggable="false"
                         />
                     </div>
                 </div>
@@ -25,6 +26,7 @@ const AboutPage = () => {
                             src="/public/images/text-about.svg"
                             alt="Portfolio Text"
                             className="max-w-[90vw] md:max-w-[500px] "
+                            draggable="false"
                         />
                     </div>
 

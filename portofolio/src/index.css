@@ -8,3 +8,13 @@
 body {
   font-family: var(--font-serif);
 }
+
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: auto;
+  /* Ensure they can still be clicked if needed */
+}
