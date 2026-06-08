@@ -56,7 +56,7 @@ export default function MoreAboutMe() {
                             <div className="flex gap-4">
                                 <div>
                                     <h3 className="font-semibold text-slate-800">
-                                        Hallo World
+                                        here with me
                                     </h3>
 
                                     <p className="text-sm text-slate-500">
