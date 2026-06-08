@@ -1,5 +1,5 @@
 import Button from "../../components/Button";
-import AboutParticle from "./particle/AboutParticle";
+import AboutParticle from "../../components/particle/AboutParticle";
 
 const AboutPage = () => {
     return (

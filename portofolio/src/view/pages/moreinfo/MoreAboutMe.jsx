@@ -9,6 +9,8 @@ import {
 } from "react-icons/fa";
 
 import { MdEmail } from "react-icons/md";
+import AboutParticle from "../../components/particle/AboutParticle";
+import { AchievmentsMocks } from "../../../core/mocks/AchievmentsMocks";
 
 export default function MoreAboutMe() {
     return (
@@ -151,6 +153,54 @@ export default function MoreAboutMe() {
                     </div>
 
                 </div>
+
+                {/* Certificates & Achievements */}
+                <div className="mt-20">
+                    <AboutParticle />
+                    <h3 className="text-lg font-bold uppercase tracking-[0.3em] text-blue-400 mb-8">Sertifikat &amp; Prestasi</h3>
+
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+                        {/* LEFT — List */}
+                        <ul className="space-y-2">
+                            {AchievmentsMocks.map((item, i) => (
+                                <li key={i} className="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 group">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 rounded-lg bg-blue-100 group-hover:bg-blue-200 flex items-center justify-center shrink-0 transition-colors">
+                                            <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-slate-800 font-bold text-sm">{item.title}</p>
+                                            <p className="text-xs font-semibold text-slate-500 mt-0.5">{item.issuer}</p>
+                                        </div>
+                                    </div>
+                                    <span className="text-xs font-medium text-blue-500 bg-blue-50 group-hover:bg-white border border-blue-300 px-2.5 py-1 rounded-full shrink-0 ml-4 transition-colors font-semibold">
+                                        {item.year}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        {/* RIGHT — Blue Illustration */}
+                        <div className="flex items-center justify-center">
+                            <div className="relative w-full max-w-md aspect-square">
+                                {/* Glow */}
+                                <div className="absolute inset-0 rounded-full bg-blue-400 blur-3xl opacity-30" />
+
+                                {/* Original Image with Blue Shadow */}
+                                <img
+                                    src="/images/messisleep.png"
+                                    alt="Messi Sleeping"
+                                    className="relative w-full h-full object-contain drop-shadow-[0_0_40px_rgba(59,130,246,0.6)]"
+                                />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
 
         </section>

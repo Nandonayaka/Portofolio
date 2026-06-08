@@ -22,14 +22,19 @@ const experiences = [
 const ExperiencePage = () => {
   return (
     <section className="w-full py-20 px-6 md:px-12 mb-[100px]">
+
+      <div className="flex justify-center max-w-lg mx-auto">
+        <img
+          src="/images/text-experience.png"
+          alt="Experience"
+          className="mb-12 h-auto"
+        />
+      </div>
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+
 
         {/* Left Side */}
         <div>
-          <h2 className="text-xs tracking-[0.3em] uppercase text-slate-500 mb-12">
-            Experience
-          </h2>
-
           <div className="relative">
             {/* Vertical Line */}
             <div className="absolute left-[72px] top-0 bottom-0 w-px bg-blue-200" />
