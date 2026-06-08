@@ -1,21 +1,21 @@
 const experiences = [
   {
-    year: "2024 - Present",
-    title: "Freelance Graphic Designer",
+    year: "2025 - 2026",
+    title: "Magang Di PT. Hummatech Indonesia",
     description:
-      "Working with global clients to create compelling visual identities and branding solutions.",
+      "Membangun sistem absensi digital yang efisien dan user-friendly untuk kebutuhan seminar. Sistem ini dirancang untuk memudahkan proses absensi, mengurangi penggunaan kertas, dan menyediakan data yang akurat serta mudah diakses. Dengan antarmuka yang intuitif dan fitur yang lengkap, sistem ini membantu meningkatkan efisiensi administrasi dan pengalaman pengguna dalam kegiatan seminar.",
   },
   {
-    year: "2022 - 2024",
-    title: "Graphic Designer",
+    year: "2026",
+    title: "Freelance Web Development",
     description:
-      "Developed branding, digital, and print materials for various businesses.",
+      "Mengerjakan berbagai proyek aplikasi web berbasis Laravel, React, JavaScript, dan MySQL untuk kebutuhan pembelajaran serta pengembangan sistem informasi. Berfokus pada implementasi fitur CRUD, autentikasi pengguna, integrasi API, pengelolaan database, dan pengembangan antarmuka yang responsif.",
   },
   {
-    year: "2020 - 2022",
-    title: "Junior Designer",
+    year: "2025",
+    title: "Clouthing Brand Owner",
     description:
-      "Assisted in creating branding and marketing design projects.",
+      "Mengelola bisnis clothing brand dengan menjual berbagai produk fashion berkualitas. Berfokus pada pemasaran digital, pengelolaan pesanan, pelayanan pelanggan, dan pengembangan identitas merek untuk meningkatkan penjualan dan loyalitas pelanggan.",
   },
 ];
 
