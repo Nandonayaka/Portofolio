@@ -15,7 +15,7 @@ export const originalWorks = [
         src: "/images/gallery/04-a.png",
         title: "SEMINAR",
         desc: "Absensi Digital",
-        year: "2025",
+        year: "2025-2026",
         github: "https://github.com/nandonayaka",
         demo: "https://seminar.mischool.id/",
         images: ["/images/gallery/04-a.png", "/images/gallery/04.png"],
@@ -26,7 +26,7 @@ export const originalWorks = [
         src: "/images/gallery/09-a.png",
         title: "KASLY",
         desc: "Manajemen Uang",
-        year: "2024",
+        year: "2026",
         github: "https://github.com/nandonayaka",
         youtube: "https://youtu.be/vYKD4Sv_l4Q",
         images: ["/images/gallery/09-a.png", "/images/gallery/09.png"],
@@ -37,7 +37,7 @@ export const originalWorks = [
         src: "/images/gallery/01-a.png",
         title: "PUSTAKAKU",
         desc: "Perpustakaan Digital",
-        year: "2024",
+        year: "2025",
         github: "https://github.com/nandonayaka",
         images: ["/images/gallery/01.png", "/images/gallery/01-a.png"],
         longDesc: "Membangun sistem perpustakaan digital yang efisien dan user-friendly untuk kebutuhan sehari-hari. Sistem ini dirancang untuk memudahkan pengguna dalam mengelola keuangan pribadi, melacak pengeluaran, dan mencapai tujuan finansial. Dengan antarmuka yang intuitif dan fitur yang lengkap, aplikasi ini membantu meningkatkan kesadaran finansial dan mendorong kebiasaan menabung yang lebih baik."
@@ -47,7 +47,7 @@ export const originalWorks = [
         src: "/images/gallery/02.png",
         title: "Madist Mandiri",
         desc: "Paket Travel Umroh",
-        year: "2024",
+        year: "2025",
         github: "https://github.com/nandonayaka",
         images: ["/images/gallery/02.png", "/images/gallery/02-a.png"],
         longDesc: "Membangun sistem paket travel umroh yang efisien dan user-friendly untuk kebutuhan sehari-hari. Sistem ini dirancang untuk memudahkan pengguna dalam mengelola keuangan pribadi, melacak pengeluaran, dan mencapai tujuan finansial. Dengan antarmuka yang intuitif dan fitur yang lengkap, aplikasi ini membantu meningkatkan kesadaran finansial dan mendorong kebiasaan menabung yang lebih baik."
@@ -57,7 +57,7 @@ export const originalWorks = [
         src: "/images/gallery/05.png",
         title: "Landing Pages Tefa Smk 3 Pmk",
         desc: "Landing Pages",
-        year: "2026",
+        year: "2025",
         github: "https://github.com/nandonayaka",
         images: ["/images/gallery/05.png", "/images/gallery/05-a.png"],
         longDesc: "Membangun landing pages yang efisien dan user-friendly untuk kebutuhan sehari-hari. Landing pages ini dirancang untuk memudahkan pengguna dalam mengelola keuangan pribadi, melacak pengeluaran, dan mencapai tujuan finansial. Dengan antarmuka yang intuitif dan fitur yang lengkap, landing pages ini membantu meningkatkan kesadaran finansial dan mendorong kebiasaan menabung yang lebih baik."
@@ -67,7 +67,7 @@ export const originalWorks = [
         src: "/images/gallery/06.png",
         title: "Company Profile Hummatech Challange",
         desc: "Company Profile",
-        year: "2026",
+        year: "2025",
         github: "https://github.com/nandonayaka",
         images: ["/images/gallery/06.png"],
         longDesc: "Membangun company profile yang efisien dan user-friendly untuk kebutuhan sehari-hari. Company profile ini dirancang untuk memudahkan pengguna dalam mengelola keuangan pribadi, melacak pengeluaran, dan mencapai tujuan finansial. Dengan antarmuka yang intuitif dan fitur yang lengkap, company profile ini membantu meningkatkan kesadaran finansial dan mendorong kebiasaan menabung yang lebih baik."
@@ -77,7 +77,7 @@ export const originalWorks = [
         src: "/images/gallery/07.png",
         title: "Rumah Kita",
         desc: "Website Donasi Panti Asuhan",
-        year: "2024",
+        year: "2025",
         github: "https://github.com/nandonayaka",
         images: ["/images/gallery/07.png"],
         longDesc: "Membangun website donasi panti asuhan yang efisien dan user-friendly untuk kebutuhan sehari-hari. Website ini dirancang untuk memudahkan pengguna dalam mengelola keuangan pribadi, melacak pengeluaran, dan mencapai tujuan finansial. Dengan antarmuka yang intuitif dan fitur yang lengkap, website ini membantu meningkatkan kesadaran finansial dan mendorong kebiasaan menabung yang lebih baik."
