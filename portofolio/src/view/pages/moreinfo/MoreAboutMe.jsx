@@ -116,28 +116,36 @@ export default function MoreAboutMe() {
 
                             <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                                 <a
-                                    href="#"
+                                    href="https://www.youtube.com/@inayaka9386"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center hover:-translate-y-1 transition"
                                 >
                                     <FaYoutube size={24} className="text-red-500" />
                                 </a>
 
                                 <a
-                                    href="#"
+                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=nandonayakaaa@gmail.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center hover:-translate-y-1 transition"
                                 >
                                     <MdEmail size={24} className="text-blue-500" />
                                 </a>
 
                                 <a
-                                    href="#"
+                                    href="https://github.com/Nandonayaka"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center hover:-translate-y-1 transition"
                                 >
                                     <FaGithub size={24} className="text-slate-800" />
                                 </a>
 
                                 <a
-                                    href="#"
+                                    href="https://open.spotify.com/user/mgm3b0cfyrxh7htz5i8x1xi6a?si=sHjg2qzaTc64id6oASXM0Q"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center hover:-translate-y-1 transition"
                                 >
                                     <FaSpotify size={24} className="text-green-500" />

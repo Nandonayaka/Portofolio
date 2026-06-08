@@ -1,8 +1,8 @@
 export const AchievmentsMocks = [
-    { title: "Web Development Fundamentals", issuer: "Dicoding Indonesia", year: "2023" },
-    { title: "React JS Fundamentals", issuer: "Dicoding Indonesia", year: "2023" },
-    { title: "UI/UX Design Essentials", issuer: "Google Activate", year: "2022" },
-    { title: "Juara 2 Lomba Desain Grafis", issuer: "Tingkat Provinsi", year: "2022" },
-    { title: "Backend Development with Laravel", issuer: "Bangkit Academy", year: "2024" },
-    { title: "JavaScript Intermediate", issuer: "HackerRank", year: "2024" },
+    { title: "Sertifikasi Kompeten Pt HummaTech Indonesia", issuer: "HummaTech Indonesia", year: "2025" },
+    { title: "Sertifikasi Magang Pt HummaTech Indonesia", issuer: "HummaTech Indonesia", year: "2025" },
+    { title: "Medali Emas Olimpiade KS2N Bahasa Inggris", issuer: "Tingkat Nasional", year: "2024" },
+    { title: "Juara 1 Kategori LKBB BARATAYUDHA", issuer: "Tingkat Nasional", year: "2024" },
+    { title: "Juara 1 Kategori LKBB DINAMIKA", issuer: "Tingkat Provinsi (Jawa Timur)", year: "2024" },
+    { title: "Juara 2 Kategori LKBB LEGENDA", issuer: "Tingkat Wilayah (Se-Madura)", year: "2024" },
 ];

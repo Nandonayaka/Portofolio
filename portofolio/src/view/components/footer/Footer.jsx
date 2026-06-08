@@ -26,13 +26,13 @@ const Footer = () => {
                             Focused on React, JavaScript, and modern web aesthetics.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-blue-500 hover:text-white transition-all shadow-sm">
+                            <a href="https://github.com/Nandonayaka" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-blue-500 hover:text-white transition-all shadow-sm">
                                 <FaGithub size={20} />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-red-500 hover:text-white transition-all shadow-sm">
+                            <a href="https://www.youtube.com/@inayaka9386" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-red-500 hover:text-white transition-all shadow-sm">
                                 <FaYoutube size={20} />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-green-500 hover:text-white transition-all shadow-sm">
+                            <a href="https://open.spotify.com/user/mgm3b0cfyrxh7htz5i8x1xi6a?si=sHjg2qzaTc64id6oASXM0Q" className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-green-500 hover:text-white transition-all shadow-sm">
                                 <FaSpotify size={20} />
                             </a>
                         </div>
@@ -73,11 +73,11 @@ const Footer = () => {
                     <div className="flex flex-col items-center text-center lg:items-start lg:text-left px-4">
                         <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-8 border-b-2 border-blue-500 pb-1">Contact</h4>
                         <div className="space-y-4">
-                            <a href="mailto:nandonayaka@email.com" className="flex flex-col items-center lg:items-start gap-2 group">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nandonayakaaa@gmail.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center lg:items-start gap-2 group">
                                 <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-all shadow-inner">
                                     <MdEmail size={24} />
                                 </div>
-                                <span className="text-slate-700 font-bold text-sm tracking-tight">nandonayaka@email.com</span>
+                                <span className="text-slate-700 font-bold text-sm tracking-tight">nandonayakaaa@gmail.com</span>
                             </a>
                         </div>
                     </div>
