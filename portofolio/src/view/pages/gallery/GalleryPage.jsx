@@ -53,9 +53,13 @@ const GalleryPage = () => {
                     <div className="h-px flex-1 bg-blue-100"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="-mx-6 px-6 flex overflow-x-auto md:mx-0 md:px-0 md:grid md:grid-cols-3 gap-8 pb-8 md:pb-0 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                     {originalWorks.slice(0, 3).map((work, idx) => (
-                        <div key={work.id} onClick={() => setSelectedProject(work)} className="group relative flex flex-col cursor-pointer">
+                        <div
+                            key={work.id}
+                            onClick={() => setSelectedProject(work)}
+                            className="group relative flex flex-col cursor-pointer flex-shrink-0 w-[85%] md:w-auto snap-center"
+                        >
                             <span className="absolute -top-6 -left-2 text-7xl font-black text-blue-50/50 z-0 pointer-events-none group-hover:text-blue-100/50 transition-colors duration-500">
                                 0{idx + 1}
                             </span>
@@ -110,10 +114,10 @@ const GalleryPage = () => {
             {/* Section: All Projects Slider */}
             <div className="relative">
                 <div className="flex items-center gap-4 mb-8">
-                    <h2 className="text-xl md:text-2xl font-bold text-blue-900 tracking-tighter uppercase">
+                    <h2 className="text-xl md:text-2xl font-bold text-blue-900 tracking-tighter uppercase text-center md:text-left w-full md:w-auto">
                         All Projects
                     </h2>
-                    <div className="h-px flex-1 bg-blue-100"></div>
+                    <div className="hidden md:block h-px flex-1 bg-blue-100"></div>
                 </div>
 
                 <button
@@ -138,13 +142,13 @@ const GalleryPage = () => {
                     ref={sliderRef}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
-                    className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden w-full px-2"
+                    className="-mx-6 px-6 flex gap-6 overflow-x-auto md:mx-0 md:px-2 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden w-screen md:w-full"
                 >
                     {works.map((work, index) => (
                         <div
                             key={`${work.id}-${index}`}
                             onClick={() => setSelectedProject(work)}
-                            className="w-[75%] sm:w-[50%] md:w-[35%] lg:w-[22%] snap-start flex-shrink-0 flex flex-col group cursor-pointer"
+                            className="w-[75%] sm:w-[50%] md:w-[35%] lg:w-[22%] snap-center flex-shrink-0 flex flex-col group cursor-pointer"
                         >
                             <div className="w-full aspect-[16/10] rounded-xl overflow-hidden bg-stone-200 shadow-sm mb-3 relative">
                                 <img
