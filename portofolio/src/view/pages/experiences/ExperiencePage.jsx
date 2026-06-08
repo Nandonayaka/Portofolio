@@ -30,7 +30,7 @@ const ExperiencePage = () => {
           className="mb-12 h-auto"
         />
       </div>
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-stretch">
 
 
         {/* Left Side */}
@@ -67,11 +67,11 @@ const ExperiencePage = () => {
         </div>
 
         {/* Right Side */}
-        <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-blue-100 via-blue-50 to-white p-8 h-[260px] flex items-center justify-center">
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-100 via-blue-50 to-white min-h-[300px] lg:min-h-0">
           <img
-            src="/wave-image.jpg"
+            src="/images/experience.png"
             alt="Experience Visual"
-            className="w-full h-full object-cover rounded-2xl"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
       </div>
