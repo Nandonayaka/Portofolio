@@ -3,85 +3,109 @@ import AboutParticle from "../../components/particle/AboutParticle";
 
 const AboutPage = () => {
     const scrollToMoreInfo = () => {
-        const section = document.getElementById('moreinfo-section');
+        const section = document.getElementById("moreinfo-section");
         if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+            section.scrollIntoView({ behavior: "smooth" });
         }
     };
 
     return (
-        <div className="py-20 px-4 md:px-16 relative">
-            {/* Background Stars/Sparkles */}
+        <div className="py-20 px-6 lg:px-16 relative overflow-hidden">
             <AboutParticle />
 
-            {/* Section Utama: Kiri Foto, Kanan Deskripsi */}
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16">
+            <div className="max-w-7xl mx-auto">
+                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
-                {/* Sisi Kiri: Foto Profil */}
-                <div className="w-full md:w-2/5 flex justify-center" data-aos="fade-right">
-                    <div className="flex justify-center md:justify-start shadow-xl">
+                    {/* FOTO */}
+                    <div
+                        className="w-full lg:w-[40%] flex justify-center"
+                        data-aos="fade-right"
+                    >
                         <img
                             src="/images/me.png"
                             alt="Me"
-                            className="max-w-[70vw] md:max-w-full shadow-xl"
+                            className="w-[90%] lg:w-full max-w-[700px] drop-shadow-xl"
                             draggable="false"
                         />
                     </div>
-                </div>
 
-                {/* Sisi Ranan: Judul Besar & Paragraf Deskripsi */}
-                <div className="w-full md:w-3/5 flex flex-col justify-center" data-aos="fade-left">
-                    {/* Judul Besar di atas paragraf */}
-                    <div className="flex justify-center md:justify-start ">
+                    {/* KONTEN */}
+                    <div
+                        className="w-full lg:w-[60%]"
+                        data-aos="fade-left"
+                    >
+                        {/* JUDUL */}
                         <img
                             src="/images/text-about.png"
-                            alt="Portfolio Text"
-                            className="max-w-[90vw] md:max-w-[500px] "
+                            alt="About Me"
+                            className="w-full max-w-[600px] mb-8"
                             draggable="false"
                         />
-                    </div>
 
-                    {/* Deskripsi/Paragraf */}
-                    <div className="space-y-4 text-base md:text-sm text-black leading-relaxed mt-4">
-                        <p>
-                            Halo! Saya adalah seorang Frontend Developer yang fokus membangun aplikasi web yang interaktif, responsif, dan memiliki performa tinggi menggunakan React dan ekosistem modern lainnya.
-                        </p>
-                        <p>
-                            Selain ngoding, saya juga suka mengeksplorasi dunia desain grafis, branding, dan digital marketing untuk memberikan nilai tambah pada setiap proyek yang saya kerjakan.
-                        </p>
-                    </div>
+                        {/* DESKRIPSI */}
+                        <div className="space-y-5 text-gray-700 text-base lg:text-lg leading-8">
+                            <p>
+                                Halo! Saya adalah seorang Frontend Developer yang
+                                memiliki minat besar dalam membangun website dan
+                                aplikasi web modern yang responsif, interaktif,
+                                serta memberikan pengalaman pengguna yang nyaman
+                                di berbagai perangkat.
+                            </p>
 
-                    {/* Detail Tambahan: Umur, Lokasi, dll */}
-                    <div className="mt-10 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
-                        {/* Age - Tetap di baris sendiri di HP */}
-                        <div className="text-center md:text-left">
-                            <p className="text-sm uppercase tracking-widest text-black mb-1 font-serif italic">/ Age /</p>
-                            <p className="text-xl font-medium text-blue-900">Umur hanya tuhan yang tau</p>
+                            <p>
+                                Saya terbiasa menggunakan React, JavaScript,
+                                TypeScript, Tailwind CSS, dan berbagai tools
+                                modern lainnya untuk menciptakan antarmuka yang
+                                cepat, efisien, dan mudah dipelihara. Bagi saya,
+                                sebuah website yang baik bukan hanya soal tampilan,
+                                tetapi juga performa, aksesibilitas, dan kualitas
+                                kode di baliknya.
+                            </p>
                         </div>
 
-                        {/* Baris untuk Location & Role di HP agar sejajar */}
-                        <div className="flex gap-8 md:gap-12 justify-center md:justify-start">
-                            <div className="text-center md:text-left">
-                                <p className="text-sm uppercase tracking-widest text-black mb-1 font-serif italic">/ Location /</p>
-                                <p className="text-xl font-medium text-blue-900">Jawa Timur, IDN</p>
+                        {/* INFO */}
+                        <div className="mt-10 flex flex-wrap gap-10">
+                            <div>
+                                <p className="text-sm uppercase tracking-widest text-black mb-1 font-serif italic">
+                                    / Age /
+                                </p>
+                                <p className="text-xl font-medium text-blue-900">
+                                    Umur hanya Tuhan yang tahu
+                                </p>
                             </div>
-                            <div className="text-center md:text-left">
-                                <p className="text-sm uppercase tracking-widest text-black mb-1 font-serif italic">/ Role /</p>
-                                <p className="text-xl font-medium text-blue-900">Frontend Dev</p>
+
+                            <div>
+                                <p className="text-sm uppercase tracking-widest text-black mb-1 font-serif italic">
+                                    / Location /
+                                </p>
+                                <p className="text-xl font-medium text-blue-900">
+                                    Jawa Timur, IDN
+                                </p>
                             </div>
+
+                            <div>
+                                <p className="text-sm uppercase tracking-widest text-black mb-1 font-serif italic">
+                                    / Role /
+                                </p>
+                                <p className="text-xl font-medium text-blue-900">
+                                    Frontend Developer
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* BUTTON */}
+                        <div className="mt-12">
+                            <Button
+                                text="More About Me"
+                                onClick={scrollToMoreInfo}
+                            />
                         </div>
                     </div>
 
-                    {/* Button More About Me */}
-                    <div className="mt-12 flex justify-center md:justify-start">
-                        <Button text="More about me" onClick={scrollToMoreInfo} />
-                    </div>
                 </div>
-
             </div>
         </div>
     );
 };
-
 
 export default AboutPage;
