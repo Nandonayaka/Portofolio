@@ -44,7 +44,7 @@ const ExperiencePage = () => {
                 key={index}
                 className="grid grid-cols-[60px_24px_1fr] gap-4 mb-12 relative"
               >
-                <div className="text-[11px] text-slate-400">
+                <div className="text-[11px] text-slate-500 font-medium">
                   {item.year}
                 </div>
 
@@ -54,10 +54,10 @@ const ExperiencePage = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-medium text-slate-800">
+                  <h3 className="text-sm font-bold text-slate-800">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-500 max-w-md">
+                  <p className="mt-2 text-xs font-semibold leading-relaxed text-slate-500 max-w-md">
                     {item.description}
                   </p>
                 </div>
