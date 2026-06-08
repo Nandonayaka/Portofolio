@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from "react";
 import {
     FaYoutube,
     FaGithub,
@@ -6,6 +7,8 @@ import {
     FaStepBackward,
     FaStepForward,
     FaPause,
+    FaPlay,
+    FaSyncAlt,
 } from "react-icons/fa";
 
 import { MdEmail } from "react-icons/md";
@@ -13,6 +16,36 @@ import AboutParticle from "../../components/particle/AboutParticle";
 import { AchievmentsMocks } from "../../../core/mocks/AchievmentsMocks";
 
 export default function MoreAboutMe() {
+    const audioRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [isLooping, setIsLooping] = useState(false);
+    const [progress, setProgress] = useState(0);
+
+    const togglePlay = () => {
+        if (isPlaying) {
+            audioRef.current.pause();
+        } else {
+            audioRef.current.play();
+        }
+        setIsPlaying(!isPlaying);
+    };
+
+    const toggleLoop = () => {
+        setIsLooping(!isLooping);
+    };
+
+    const handleTimeUpdate = () => {
+        const current = audioRef.current.currentTime;
+        const duration = audioRef.current.duration;
+        if (duration) {
+            setProgress((current / duration) * 100);
+        }
+    };
+
+    const handleEnded = () => {
+        setIsPlaying(false);
+        setProgress(0);
+    };
     return (
         <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-[#f8fbff] to-[#eef5ff]">
 
@@ -51,47 +84,66 @@ export default function MoreAboutMe() {
                         </div>
 
                         {/* Music Card */}
-                        <div className="mt-2 w-full max-w-sm bg-blur-xl  p-5">
-
+                        <div className="mt-2 w-full max-w-sm bg-blue-50/50 backdrop-blur-md rounded-3xl p-6 shadow-sm border border-white">
+                            <audio
+                                ref={audioRef}
+                                src="/music.mp3"
+                                loop={isLooping}
+                                onTimeUpdate={handleTimeUpdate}
+                                onEnded={handleEnded}
+                            />
                             <div className="flex gap-4">
                                 <div>
-                                    <h3 className="font-semibold text-slate-800">
-                                        here with me
+                                    <h3 className="font-bold text-slate-800 tracking-tight">
+                                        d4vd - Here With Me
                                     </h3>
-
-                                    <p className="text-sm text-slate-500">
+                                    <p className="text-xs text-blue-500 font-medium uppercase tracking-widest mt-1">
                                         My Favorite Song
                                     </p>
                                 </div>
-
                             </div>
 
                             {/* Progress */}
-                            <div className="mt-5">
-                                <div className="h-1 bg-slate-200 rounded-full overflow-hidden">
-                                    <div className="w-1/3 h-full bg-blue-500 rounded-full" />
+                            <div className="mt-6">
+                                <div className="h-1.5 bg-blue-100 rounded-full overflow-hidden cursor-pointer" onClick={(e) => {
+                                    const rect = e.currentTarget.getBoundingClientRect();
+                                    const x = e.clientX - rect.left;
+                                    const clickedValue = (x / rect.width) * audioRef.current.duration;
+                                    audioRef.current.currentTime = clickedValue;
+                                }}>
+                                    <div
+                                        className="h-full bg-blue-500 rounded-full transition-all duration-100"
+                                        style={{ width: `${progress}%` }}
+                                    />
                                 </div>
                             </div>
 
                             {/* Controls */}
-                            <div className="flex items-center justify-center gap-6 mt-6">
-
-                                <button>
-                                    <FaStepBackward size={22} />
+                            <div className="flex items-center justify-center gap-7 mt-8">
+                                <button
+                                    onClick={toggleLoop}
+                                    className={`transition-colors ${isLooping ? 'text-blue-500' : 'text-slate-400'} hover:text-blue-600`}
+                                >
+                                    <FaSyncAlt size={16} />
+                                </button>
+                                <button className="text-slate-400 hover:text-blue-500 transition-colors">
+                                    <FaStepBackward size={20} />
                                 </button>
 
-                                <button className="w-14 h-14 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-lg">
-                                    <FaPause />
+                                <button
+                                    onClick={togglePlay}
+                                    className="w-16 h-16 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-xl shadow-blue-200 hover:scale-110 active:scale-95 transition-all"
+                                >
+                                    {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} className="ml-1" />}
                                 </button>
 
-                                <button>
-                                    <FaStepForward size={22} />
+                                <button className="text-slate-400 hover:text-blue-500 transition-colors">
+                                    <FaStepForward size={20} />
                                 </button>
 
-                                <button>
+                                <button className="text-red-400 hover:text-red-500 transition-colors">
                                     <FaHeart size={20} />
                                 </button>
-
                             </div>
                         </div>
 

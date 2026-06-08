@@ -41,12 +41,65 @@ const Footer = () => {
                     {/* Navigation */}
                     <div className="flex flex-col items-center text-center lg:items-start lg:text-left px-4">
                         <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-8 border-b-2 border-blue-500 pb-1">Navigation</h4>
-                        <ul className="space-y-4 font-semibold">
-                            <li><Link to="/dashboard" className="text-slate-500 hover:text-blue-500 transition-colors">Dashboard</Link></li>
-                            <li><Link to="/about" className="text-slate-500 hover:text-blue-500 transition-colors">About Me</Link></li>
-                            <li><Link to="/moreinfo" className="text-slate-500 hover:text-blue-500 transition-colors">Achievements</Link></li>
-                            <li><Link to="/gallery" className="text-slate-500 hover:text-blue-500 transition-colors">Gallery</Link></li>
-                            <li><Link to="/experience" className="text-slate-500 hover:text-blue-500 transition-colors">Experiences</Link></li>
+                        <ul className="space-y-4 font-semibold text-slate-500">
+                            <li>
+                                <button
+                                    onClick={() => {
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }}
+                                    className="hover:text-blue-500 transition-colors cursor-pointer"
+                                >
+                                    Dashboard
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    onClick={() => {
+                                        const el = document.getElementById('about-section');
+                                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                                        else window.location.href = '/about';
+                                    }}
+                                    className="hover:text-blue-500 transition-colors cursor-pointer"
+                                >
+                                    About Me
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    onClick={() => {
+                                        const el = document.getElementById('moreinfo-section');
+                                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                                        else window.location.href = '/moreinfo';
+                                    }}
+                                    className="hover:text-blue-500 transition-colors cursor-pointer"
+                                >
+                                    Achievements
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    onClick={() => {
+                                        const el = document.getElementById('gallery-section');
+                                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                                        else window.location.href = '/gallery';
+                                    }}
+                                    className="hover:text-blue-500 transition-colors cursor-pointer"
+                                >
+                                    Gallery
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    onClick={() => {
+                                        const el = document.getElementById('experience-section');
+                                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                                        else window.location.href = '/experience';
+                                    }}
+                                    className="hover:text-blue-500 transition-colors cursor-pointer"
+                                >
+                                    Experiences
+                                </button>
+                            </li>
                         </ul>
                     </div>
 
@@ -84,15 +137,10 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="w-full mt-24 pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="w-full mt-24 pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-center items-center gap-6">
                     <p className="text-slate-400 text-sm font-medium">
                         © {new Date().getFullYear()} Nando Nayaka. All rights reserved.
                     </p>
-                    <div className="flex items-center gap-2 text-slate-400 text-sm font-medium">
-                        <p>Made with</p>
-                        <span className="text-red-500 animate-pulse">❤</span>
-                        <p>in Indonesia</p>
-                    </div>
                 </div>
             </div>
         </footer>
