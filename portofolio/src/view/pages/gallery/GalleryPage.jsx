@@ -26,7 +26,7 @@ const GalleryPage = () => {
     return (
         <div className="w-full px-6 md:px-12 text-black relative group/section pb-20">
             {/* Header Atas */}
-            <div className="flex flex-col border-b border-blue-200 pb-6 mb-12">
+            <div className="flex flex-col border-b border-blue-200 pb-6 mb-12" data-aos="fade-right">
                 <div className="flex justify-center md:justify-start">
                     <img
                         src="/images/text-projects.svg"
@@ -45,7 +45,7 @@ const GalleryPage = () => {
 
             {/* Section: Best 3 Projects */}
             <div className="mt-12 mb-32">
-                <div className="flex items-center gap-4 mb-10">
+                <div className="flex items-center gap-4 mb-10" data-aos="fade-up">
                     <div className="h-px flex-1 bg-blue-100"></div>
                     <h2 className="text-2xl md:text-3xl font-bold text-blue-900 tracking-tighter uppercase italic">
                         The Best Three
@@ -59,6 +59,8 @@ const GalleryPage = () => {
                             key={work.id}
                             onClick={() => setSelectedProject(work)}
                             className="group relative flex flex-col cursor-pointer flex-shrink-0 w-[85%] md:w-auto snap-center"
+                            data-aos={idx % 2 === 0 ? "fade-up" : "fade-up"}
+                            data-aos-delay={idx * 100}
                         >
                             <span className="absolute -top-6 -left-2 text-7xl font-black text-blue-50/50 z-0 pointer-events-none group-hover:text-blue-100/50 transition-colors duration-500">
                                 0{idx + 1}

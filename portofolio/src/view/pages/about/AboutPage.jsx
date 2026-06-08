@@ -18,7 +18,7 @@ const AboutPage = () => {
             <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16">
 
                 {/* Sisi Kiri: Foto Profil */}
-                <div className="w-full md:w-2/5 flex justify-center">
+                <div className="w-full md:w-2/5 flex justify-center" data-aos="fade-right">
                     <div className="flex justify-center md:justify-start shadow-xl">
                         <img
                             src="/public/images/me.svg"
@@ -29,8 +29,8 @@ const AboutPage = () => {
                     </div>
                 </div>
 
-                {/* Sisi Kanan: Judul Besar & Paragraf Deskripsi */}
-                <div className="w-full md:w-3/5 flex flex-col justify-center">
+                {/* Sisi Ranan: Judul Besar & Paragraf Deskripsi */}
+                <div className="w-full md:w-3/5 flex flex-col justify-center" data-aos="fade-left">
                     {/* Judul Besar di atas paragraf */}
                     <div className="flex justify-center md:justify-start ">
                         <img

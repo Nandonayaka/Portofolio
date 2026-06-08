@@ -69,7 +69,7 @@ export default function MoreAboutMe() {
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
 
                     {/* LEFT */}
-                    <div className="flex flex-col items-center lg:items-start">
+                    <div className="flex flex-col items-center lg:items-start" data-aos="fade-right">
 
                         {/* Photo */}
                         <div className="relative w-full max-w-sm">
@@ -84,7 +84,7 @@ export default function MoreAboutMe() {
                         </div>
 
                         {/* Music Card */}
-                        <div className="mt-2 w-full max-w-sm bg-blue-50/50 backdrop-blur-md rounded-3xl p-6 shadow-sm border border-white">
+                        <div className="mt-2 w-full max-w-sm bg-blue-50/50 backdrop-blur-md rounded-3xl p-6 shadow-sm border border-white" data-aos="fade-right">
                             <audio
                                 ref={audioRef}
                                 src="/music.mp3"
@@ -150,7 +150,7 @@ export default function MoreAboutMe() {
                     </div>
 
                     {/* RIGHT */}
-                    <div className="text-center lg:text-left">
+                    <div className="text-center lg:text-left" data-aos="fade-left">
                         <h3 className="text-5xl font-bold text-slate-800 leading-tight">
                             Ilhami Nando Nayaka Sunandar
                         </h3>

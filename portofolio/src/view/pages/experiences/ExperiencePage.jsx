@@ -34,7 +34,7 @@ const ExperiencePage = () => {
 
 
         {/* Left Side */}
-        <div>
+        <div data-aos="fade-right">
           <div className="relative">
             {/* Vertical Line */}
             <div className="absolute left-[72px] top-0 bottom-0 w-px bg-blue-200" />
@@ -43,6 +43,8 @@ const ExperiencePage = () => {
               <div
                 key={index}
                 className="grid grid-cols-[60px_24px_1fr] gap-4 mb-12 relative"
+                data-aos="fade-right"
+                data-aos-delay={index * 100}
               >
                 <div className="text-[11px] text-slate-500 font-medium">
                   {item.year}
@@ -67,7 +69,7 @@ const ExperiencePage = () => {
         </div>
 
         {/* Right Side */}
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-100 via-blue-50 to-white min-h-[300px] lg:min-h-0">
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-100 via-blue-50 to-white min-h-[300px] lg:min-h-0 shadow-xl" data-aos="fade-left">
           <img
             src="/images/experience.png"
             alt="Experience Visual"

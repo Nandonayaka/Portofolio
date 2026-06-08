@@ -16,7 +16,7 @@ const DashboardPage = () => {
             {/* Hero Section */}
             <div className="h-[calc(100vh-100px)] w-full flex flex-col items-center justify-center overflow-hidden relative">
                 <div className="relative z-10 flex flex-col items-center">
-                    <div className="mb-12">
+                    <div className="mb-12" data-aos="fade-up">
                         <img src="/public/images/text-dashboard.png" alt="Portfolio Text" className="max-w-[90vw] md:max-w-full" draggable="false" />
                     </div>
 
