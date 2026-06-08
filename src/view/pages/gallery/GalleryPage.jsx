@@ -29,7 +29,7 @@ const GalleryPage = () => {
             <div className="flex flex-col border-b border-blue-200 pb-6 mb-12" data-aos="fade-right">
                 <div className="flex justify-center md:justify-start">
                     <img
-                        src="/images/text-projects.svg"
+                        src="/images/text-projects.png"
                         alt="Portfolio Text"
                         className="w-48 md:w-64"
                         draggable="false"

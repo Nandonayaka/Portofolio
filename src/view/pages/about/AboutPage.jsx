@@ -21,7 +21,7 @@ const AboutPage = () => {
                 <div className="w-full md:w-2/5 flex justify-center" data-aos="fade-right">
                     <div className="flex justify-center md:justify-start shadow-xl">
                         <img
-                            src="/public/images/me.svg"
+                            src="/public/images/me.png"
                             alt="Me"
                             className="max-w-[70vw] md:max-w-full shadow-xl"
                             draggable="false"
@@ -34,7 +34,7 @@ const AboutPage = () => {
                     {/* Judul Besar di atas paragraf */}
                     <div className="flex justify-center md:justify-start ">
                         <img
-                            src="/public/images/text-about.svg"
+                            src="/public/images/text-about.png"
                             alt="Portfolio Text"
                             className="max-w-[90vw] md:max-w-[500px] "
                             draggable="false"
