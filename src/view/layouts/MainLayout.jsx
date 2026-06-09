@@ -5,7 +5,7 @@ import DesktopToast from "../components/DesktopToast";
 
 const MainLayout = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-[#4A90FF] via-[#FDFBF7] to-[#FDFBF7]">
+        <div className="min-h-screen bg-gradient-to-b from-[#4A90FF] via-[#FDFBF7] to-[#FDFBF7] overflow-x-hidden">
             <DesktopToast />
             <Navbar />
             <div className="">

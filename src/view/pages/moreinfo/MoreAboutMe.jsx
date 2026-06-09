@@ -9,6 +9,7 @@ import {
     FaPause,
     FaPlay,
     FaSyncAlt,
+    FaWhatsapp,
 } from "react-icons/fa";
 
 import { MdEmail } from "react-icons/md";
@@ -201,6 +202,14 @@ export default function MoreAboutMe() {
                                     className="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center hover:-translate-y-1 transition"
                                 >
                                     <FaSpotify size={24} className="text-green-500" />
+                                </a>
+                                <a
+                                    href="https://wa.me/6285142514522?text=Halo%20Nayaka,%20saya%20tertarik%20dengan%20jasa%20website%20Anda.%20Boleh%20konsultasi%20lebih%20lanjut?"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center hover:-translate-y-1 transition"
+                                >
+                                    <FaWhatsapp size={24} className="text-green-500" />
                                 </a>
                             </div>
                         </div>

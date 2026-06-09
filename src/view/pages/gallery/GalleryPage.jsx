@@ -26,7 +26,7 @@ const GalleryPage = () => {
     return (
         <div className="w-full px-6 md:px-12 text-black relative group/section pb-20">
             {/* Header Atas */}
-            <div className="flex flex-col border-b border-blue-200 pb-6 mb-12" data-aos="fade-right">
+            <div className="flex flex-col border-b border-blue-200 pb-6 mb-12 mt-50" data-aos="fade-right">
                 <div className="flex justify-center md:justify-start">
                     <img
                         src="/images/text-projects.png"
@@ -144,7 +144,7 @@ const GalleryPage = () => {
                     ref={sliderRef}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
-                    className="-mx-6 px-6 flex gap-6 overflow-x-auto md:mx-0 md:px-2 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden w-screen md:w-full"
+                    className="-mx-6 px-6 flex gap-6 overflow-x-auto md:mx-0 md:px-2 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden w-full"
                 >
                     {works.map((work, index) => (
                         <div
@@ -181,109 +181,119 @@ const GalleryPage = () => {
                 </div>
             </div>
 
-            {/* PROJECT DETAIL MODAL */}
-            {selectedProject && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 animate-in fade-in duration-300">
-                    <div className="absolute inset-0 bg-blue-950/40 backdrop-blur-md" onClick={() => setSelectedProject(null)}></div>
+          {/* PROJECT DETAIL MODAL */}
+{selectedProject && (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10">
+        <div
+            className="absolute inset-0 bg-blue-950/40 backdrop-blur-md"
+            onClick={() => setSelectedProject(null)}
+        />
 
-                    <div
-                        className="relative w-full max-w-5xl max-h-[90vh] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row animate-in zoom-in-95 duration-300"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        {/* Left: Image Gallery */}
-                        <div className="w-full md:w-3/5 h-64 md:h-auto bg-slate-100 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                            <div className="flex flex-col">
-                                {selectedProject.youtube && (
-                                    <div className="relative aspect-video w-full bg-black">
-                                        <iframe
-                                            className="absolute inset-0 w-full h-full"
-                                            src={getYouTubeEmbedUrl(selectedProject.youtube)}
-                                            title={selectedProject.title}
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen
-                                        ></iframe>
-                                    </div>
-                                )}
-                                {selectedProject.images?.map((img, i) => (
-                                    <img key={i} src={img} alt={`${selectedProject.title} ${i}`} className="w-full object-cover border-b border-white" />
-                                ))}
-                            </div>
+        <div
+            className="relative w-full max-w-5xl h-[90vh] md:h-auto md:max-h-[90vh] bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
+            onClick={(e) => e.stopPropagation()}
+        >
+            {/* Left: Image Gallery */}
+            <div className="w-full md:w-3/5 h-[35vh] md:h-auto bg-slate-100 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <div className="flex flex-col">
+                    {selectedProject.youtube && (
+                        <div className="relative aspect-video w-full bg-black">
+                            <iframe
+                                className="absolute inset-0 w-full h-full"
+                                src={getYouTubeEmbedUrl(selectedProject.youtube)}
+                                title={selectedProject.title}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
                         </div>
+                    )}
 
-                        {/* Right: Info */}
-                        <div className="w-full md:w-2/5 p-8 md:p-12 flex flex-col overflow-y-auto">
-                            <button
-                                onClick={() => setSelectedProject(null)}
-                                className="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-red-50 hover:text-red-500 transition-all z-20"
-                            >
-                                <FaTimes />
-                            </button>
-
-                            <p className="text-xs uppercase tracking-[0.3em] text-blue-500 font-bold mb-4">
-                                {selectedProject.desc}
-                            </p>
-
-                            <h2 className="text-4xl font-black text-slate-900 tracking-tighter leading-none mb-6">
-                                {selectedProject.title}
-                            </h2>
-
-                            <div className="flex items-center gap-4 mb-8">
-                                <span className="px-3 py-1 bg-slate-100 rounded-full text-xs font-bold text-slate-500">
-                                    {selectedProject.year}
-                                </span>
-                                <div className="h-px flex-1 bg-slate-100"></div>
-                            </div>
-
-                            <p className="text-slate-600 leading-relaxed mb-10 text-sm">
-                                {selectedProject.longDesc || "Explore the creative process and execution behind this featured work."}
-                            </p>
-
-                            <div className="mt-auto space-y-4">
-                                {selectedProject.demo && (
-                                    <a
-                                        href={selectedProject.demo}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="flex items-center justify-center gap-3 w-full py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-100"
-                                    >
-                                        <FaExternalLinkAlt size={20} />
-                                        LIVE DEMO
-                                    </a>
-                                )}
-
-                                <a
-                                    href={selectedProject.github}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="flex items-center justify-center gap-3 w-full py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg shadow-slate-200"
-                                >
-                                    <FaGithub size={20} />
-                                    VIEW ON GITHUB
-                                </a>
-
-                                {selectedProject.youtube && (
-                                    <a
-                                        href={selectedProject.youtube}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="flex items-center justify-center gap-3 w-full py-4 bg-red-600 text-white rounded-2xl font-bold hover:bg-red-700 transition-all shadow-lg shadow-red-200"
-                                    >
-                                        <FaYoutube size={20} />
-                                        WATCH ON YOUTUBE
-                                    </a>
-                                )}
-
-                                <button
-                                    onClick={() => setSelectedProject(null)}
-                                    className="flex items-center justify-center gap-2 w-full py-4 bg-white border border-slate-200 text-slate-600 rounded-2xl font-bold hover:bg-slate-50 transition-all"
-                                >
-                                    CLOSE PREVIEW
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    {selectedProject.images?.map((img, i) => (
+                        <img
+                            key={i}
+                            src={img}
+                            alt={`${selectedProject.title} ${i}`}
+                            className="w-full object-cover border-b border-white"
+                        />
+                    ))}
                 </div>
-            )}
+            </div>
+
+            {/* Right: Info */}
+            <div className="w-full md:w-2/5 p-5 md:p-12 flex flex-col overflow-y-auto">
+                <button
+                    onClick={() => setSelectedProject(null)}
+                    className="absolute top-4 right-4 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/80 backdrop-blur-sm md:bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-red-50 hover:text-red-500 transition-all z-[110]"
+                >
+                    <FaTimes />
+                </button>
+
+                <p className="text-[10px] md:text-xs uppercase tracking-[0.25em] text-blue-500 font-bold mb-3">
+                    {selectedProject.desc}
+                </p>
+
+                <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter leading-tight mb-4 md:mb-6">
+                    {selectedProject.title}
+                </h2>
+
+                <div className="flex items-center gap-4 mb-4 md:mb-8">
+                    <span className="px-3 py-1 bg-slate-100 rounded-full text-[10px] md:text-xs font-bold text-slate-500">
+                        {selectedProject.year}
+                    </span>
+                    <div className="h-px flex-1 bg-slate-100" />
+                </div>
+
+                <p className="text-slate-600 leading-relaxed mb-6 md:mb-10 text-xs md:text-sm">
+                    {selectedProject.longDesc ||
+                        "Explore the creative process and execution behind this featured work."}
+                </p>
+
+                <div className="mt-auto space-y-3 w-full">
+                    {selectedProject.demo && (
+                        <a
+                            href={selectedProject.demo}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-center justify-center gap-2 w-full py-3 md:py-4 bg-blue-600 text-white rounded-xl md:rounded-2xl text-xs md:text-base font-bold hover:bg-blue-700 transition-all"
+                        >
+                            <FaExternalLinkAlt size={14} />
+                            LIVE DEMO
+                        </a>
+                    )}
+
+                    <a
+                        href={selectedProject.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center justify-center gap-2 w-full py-3 md:py-4 bg-slate-900 text-white rounded-xl md:rounded-2xl text-xs md:text-base font-bold hover:bg-blue-600 transition-all"
+                    >
+                        <FaGithub size={14} />
+                        VIEW ON GITHUB
+                    </a>
+
+                    {selectedProject.youtube && (
+                        <a
+                            href={selectedProject.youtube}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-center justify-center gap-2 w-full py-3 md:py-4 bg-red-600 text-white rounded-xl md:rounded-2xl text-xs md:text-base font-bold hover:bg-red-700 transition-all"
+                        >
+                            <FaYoutube size={14} />
+                            WATCH ON YOUTUBE
+                        </a>
+                    )}
+
+                    <button
+                        onClick={() => setSelectedProject(null)}
+                        className="flex items-center justify-center gap-2 w-full py-3 md:py-4 bg-white border border-slate-200 text-slate-600 rounded-xl md:rounded-2xl text-xs md:text-base font-bold hover:bg-slate-50 transition-all"
+                    >
+                        CLOSE PREVIEW
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+)}
         </div>
     );
 };
