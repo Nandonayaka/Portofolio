@@ -2,86 +2,131 @@ import Button from "../../components/Button";
 import AboutParticle from "../../components/particle/AboutParticle";
 
 const AboutPage = () => {
-    const scrollToMoreInfo = () => {
-        const section = document.getElementById('moreinfo-section');
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+  const scrollToMoreInfo = () => {
+    const section = document.getElementById("moreinfo-section");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-    return (
-        <div className="py-20 px-4 md:px-16 relative">
-            {/* Background Stars/Sparkles */}
-            <AboutParticle />
+  // Daftar skill dengan tema biru-putih solid
+  const coreSkills = [
+    "React.js",
+    "Next.js",
+    "Tailwind CSS",
+    "TypeScript",
+    "UI/UX Design",
+  ];
 
-            {/* Section Utama: Kiri Foto, Kanan Deskripsi */}
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16">
+  return (
+    <div className="py-20 px-4 md:px-16 relative">
+      {/* Background Stars/Sparkles Tetap Asli */}
+      <AboutParticle />
 
-                {/* Sisi Kiri: Foto Profil */}
-                <div className="w-full md:w-2/5 flex justify-center" data-aos="fade-right">
-                    <div className="flex justify-center md:justify-start shadow-xl">
-                        <img
-                            src="/images/me.png"
-                            alt="Me"
-                            className="max-w-[70vw] md:max-w-full shadow-xl"
-                            draggable="false"
-                        />
-                    </div>
-                </div>
-
-                {/* Sisi Ranan: Judul Besar & Paragraf Deskripsi */}
-                <div className="w-full md:w-3/5 flex flex-col justify-center" data-aos="fade-left">
-                    {/* Judul Besar di atas paragraf */}
-                    <div className="flex justify-center md:justify-start ">
-                        <img
-                            src="/images/text-about.png"
-                            alt="Portfolio Text"
-                            className="max-w-[90vw] md:max-w-[500px] "
-                            draggable="false"
-                        />
-                    </div>
-
-                    {/* Deskripsi/Paragraf */}
-                    <div className="space-y-4 text-base md:text-sm text-black leading-relaxed mt-4">
-                        <p>
-                            Halo! Saya adalah seorang Frontend Developer yang fokus membangun aplikasi web yang interaktif, responsif, dan memiliki performa tinggi menggunakan React dan ekosistem modern lainnya.
-                        </p>
-                        <p>
-                            Selain ngoding, saya juga suka mengeksplorasi dunia desain grafis, branding, dan digital marketing untuk memberikan nilai tambah pada setiap proyek yang saya kerjakan.
-                        </p>
-                    </div>
-
-                    {/* Detail Tambahan: Umur, Lokasi, dll */}
-                    <div className="mt-10 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
-                        {/* Age - Tetap di baris sendiri di HP */}
-                        <div className="text-center md:text-left">
-                            <p className="text-sm uppercase tracking-widest text-black mb-1 font-serif italic">/ Age /</p>
-                            <p className="text-xl font-medium text-blue-900">Umur hanya tuhan yang tau</p>
-                        </div>
-
-                        {/* Baris untuk Location & Role di HP agar sejajar */}
-                        <div className="flex gap-8 md:gap-12 justify-center md:justify-start">
-                            <div className="text-center md:text-left">
-                                <p className="text-sm uppercase tracking-widest text-black mb-1 font-serif italic">/ Location /</p>
-                                <p className="text-xl font-medium text-blue-900">Jawa Timur, IDN</p>
-                            </div>
-                            <div className="text-center md:text-left">
-                                <p className="text-sm uppercase tracking-widest text-black mb-1 font-serif italic">/ Role /</p>
-                                <p className="text-xl font-medium text-blue-900">Frontend Dev</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Button More About Me */}
-                    <div className="mt-12 flex justify-center md:justify-start">
-                        <Button text="More about me" onClick={scrollToMoreInfo} />
-                    </div>
-                </div>
-
-            </div>
+      {/* Section Utama */}
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16 max-w-6xl mx-auto">
+        {/* Sisi Kiri: Foto Profil dengan Border Biru Solid */}
+        <div
+          className="w-full md:w-2/5 flex justify-center md:justify-start"
+          data-aos="fade-right"
+        >
+          <div className=" rounded-2xl shadow-xl max-w-[260px] sm:max-w-[300px] md:max-w-full">
+            <img
+              src="/images/me.png"
+              alt="Frontend Developer Profile"
+              className="w-full h-auto object-cover rounded-xl "
+              draggable="false"
+            />
+          </div>
         </div>
-    );
-};
 
+        {/* Sisi Kanan: Konten Informasi */}
+        <div
+          className="w-full md:w-3/5 flex flex-col justify-center"
+          data-aos="fade-left"
+        >
+          {/* Judul Gambar (About Me) */}
+          <div className="flex justify-center md:justify-start">
+            <img
+              src="/images/text-about.png"
+              alt="About Me"
+              className="w-auto h-auto max-w-[55vw] sm:max-w-[220px] md:max-w-[320px]"
+              draggable="false"
+            />
+          </div>
+
+          {/* Deskripsi Singkat dengan Sorotan Teks Biru */}
+          <div className="space-y-4 text-center md:text-left text-base md:text-sm text-gray-800 leading-relaxed mt-6">
+            <p>
+              Halo! Saya adalah seorang{" "}
+              <span className="text-blue-600 font-bold text-lg md:text-base">
+                Frontend Developer
+              </span>{" "}
+              yang fokus membangun aplikasi web modern yang interaktif,
+              responsif, dan berperforma tinggi. Saya menjembatani kode
+              pemrograman dengan pengalaman pengguna yang optimal.
+            </p>
+            <p>
+              Memiliki ketertarikan kuat di dunia{" "}
+              <span className="text-black font-semibold underline decoration-blue-600 decoration-2">
+                UI/UX design, branding, dan digital marketing
+              </span>
+              , yang memungkinkan saya memberikan solusi digital yang tidak
+              hanya berfungsi dengan baik, tetapi juga menarik secara visual dan
+              memiliki nilai bisnis.
+            </p>
+          </div>
+
+          {/* Core Skills Badge - Biru Solid Teks Putih */}
+          <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-2">
+            {coreSkills.map((skill, index) => (
+              <span
+                key={index}
+                className="px-4 py-1.5 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-sm"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+
+          {/* Garis Pembatas Halus */}
+          <hr className="my-8 border-gray-200 w-full" />
+
+          {/* Metadata Detail (Biru & Putih/Hitam Kontras) */}
+          <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-8 md:gap-16">
+            {/* Experience */}
+            <div className="text-center md:text-left">
+              <p className="text-xs uppercase tracking-widest text-blue-600 mb-1 font-bold">
+                / Experience /
+              </p>
+              <p className="text-2xl font-black text-black">2+ Years</p>
+            </div>
+
+            {/* Location */}
+            <div className="text-center md:text-left">
+              <p className="text-xs uppercase tracking-widest text-blue-600 mb-1 font-bold">
+                / Location /
+              </p>
+              <p className="text-2xl font-black text-black">Jawa Timur, IDN</p>
+            </div>
+
+            {/* Role */}
+            <div className="text-center md:text-left">
+              <p className="text-xs uppercase tracking-widest text-blue-600 mb-1 font-bold">
+                / Current Role /
+              </p>
+              <p className="text-2xl font-black text-black">Frontend Dev</p>
+            </div>
+          </div>
+
+          {/* Tombol Aksi */}
+          <div className="mt-10 flex justify-center md:justify-start">
+            <Button text="More about me" onClick={scrollToMoreInfo} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default AboutPage;

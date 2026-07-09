@@ -1,7 +1,4 @@
-import AboutPage from "../about/AboutPage";
-import GalleryPage from "../gallery/GalleryPage";
-import ExperiencePage from "../experiences/ExperiencePage";
-import MoreAboutMe from "../moreinfo/MoreAboutMe";
+import AboutParticle from "../../components/particle/AboutParticle";
 
 const DashboardPage = () => {
     const scrollToAbout = () => {
@@ -14,6 +11,7 @@ const DashboardPage = () => {
     return (
         <div className="flex flex-col">
             {/* Hero Section */}
+            <AboutParticle/>
             <div className="h-[calc(100vh-100px)] w-full flex flex-col items-center justify-center overflow-hidden relative">
                 <div className="relative z-10 flex flex-col items-center">
                     <div className="mb-12" data-aos="fade-up">
@@ -43,31 +41,8 @@ const DashboardPage = () => {
                     </button>
                 </div>
             </div>
-
-            {/* About Section */}
-            <div id="about-section" className="">
-                <AboutPage />
-            </div>
-
-            {/* Gallery Section */}
-            <div id="gallery-section" className="">
-                <GalleryPage />
-            </div>
-
-            {/* Experience Section */}
-            <div id="experience-section" className="">
-                <ExperiencePage />
-            </div>
-
-            {/* More Info Section */}
-            <div id="moreinfo-section" className="">
-                <MoreAboutMe />
-            </div>
         </div>
     );
 };
 
-
 export default DashboardPage;
-
-

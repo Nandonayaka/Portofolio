@@ -8,8 +8,6 @@ export function Navbar() {
           </span>
         </li>
       </ul>
-
-
     </nav>
   );
 }

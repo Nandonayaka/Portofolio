@@ -24,87 +24,61 @@ const GalleryPage = () => {
     };
 
     return (
-        <div className="w-full px-6 md:px-12 text-black relative group/section pb-20">
-            {/* Header Atas */}
-            <div className="flex flex-col border-b border-blue-200 pb-6 mb-12" data-aos="fade-right">
+        <div className="w-full px-4 md:px-12 text-black relative group/section pb-24">
+            
+            {/* Header Sederhana */}
+            <div className="flex flex-col border-b border-blue-100 pb-6 mb-12" data-aos="fade-right">
                 <div className="flex justify-center md:justify-start">
                     <img
                         src="/images/text-projects.png"
                         alt="Portfolio Text"
-                        className="w-48 md:w-64"
+                        className="w-44 md:w-52 object-contain"
                         draggable="false"
                     />
                 </div>
-                <div className="flex justify-between items-center mt-2">
-                    <p className="text-xs md:text-sm text-blue-400 uppercase tracking-[0.3em] font-medium">
-                        / Featured Works 2024-2026 /
+                <div className="flex justify-between items-center mt-3">
+                    <p className="text-[11px] text-blue-600 uppercase tracking-widest font-semibold">
+                        / Featured Works /
                     </p>
-                    <div className="hidden md:block w-32 h-px bg-blue-100"></div>
                 </div>
             </div>
 
-            {/* Section: Best 3 Projects */}
-            <div className="mt-12 mb-32">
-                <div className="flex items-center gap-4 mb-10" data-aos="fade-up">
-                    <div className="h-px flex-1 bg-blue-100"></div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-blue-900 tracking-tighter uppercase italic">
-                        The Best Three
-                    </h2>
-                    <div className="h-px flex-1 bg-blue-100"></div>
-                </div>
+            {/* Section 1: Best 3 Projects */}
+            <div className="mb-24">
+                <h2 className="text-lg font-bold text-slate-800 tracking-tight uppercase mb-8" data-aos="fade-up">
+                    The Best Three
+                </h2>
 
-                <div className="-mx-6 px-6 flex overflow-x-auto md:mx-0 md:px-0 md:grid md:grid-cols-3 gap-8 pb-8 md:pb-0 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {originalWorks.slice(0, 3).map((work, idx) => (
                         <div
                             key={work.id}
                             onClick={() => setSelectedProject(work)}
-                            className="group relative flex flex-col cursor-pointer flex-shrink-0 w-[85%] md:w-auto snap-center"
-                            data-aos={idx % 2 === 0 ? "fade-up" : "fade-up"}
+                            className="group flex flex-col cursor-pointer"
+                            data-aos="fade-up"
                             data-aos-delay={idx * 100}
                         >
-                            <span className="absolute -top-6 -left-2 text-7xl font-black text-blue-50/50 z-0 pointer-events-none group-hover:text-blue-100/50 transition-colors duration-500">
-                                0{idx + 1}
-                            </span>
-
-                            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl z-10 mb-6 bg-blue-50">
+                            {/* Card Image Minimalis */}
+                            <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-4 bg-slate-50 border border-slate-100 transition-all duration-300 group-hover:border-blue-500 shadow-sm">
                                 <img
                                     src={work.src}
                                     alt={work.title}
-                                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                                    className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 text-white text-left">
-                                    <p className="text-[10px] uppercase tracking-widest mb-1 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 delay-75 font-medium text-blue-200">
-                                        {work.desc}
-                                    </p>
-                                    <h4 className="text-2xl font-black tracking-tighter opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 delay-150 mb-4">
-                                        {work.title}
-                                    </h4>
-
-                                    {work.demo && (
-                                        <a
-                                            href={work.demo}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            onClick={(e) => e.stopPropagation()}
-                                            className="bg-white text-blue-600 px-4 py-2 rounded-xl text-[10px] font-bold shadow-2xl flex items-center gap-2 w-fit transform translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-300 hover:bg-blue-600 hover:text-white border border-white"
-                                        >
-                                            <FaExternalLinkAlt size={10} />
-                                            LIVE DEMO
-                                        </a>
-                                    )}
-                                </div>
+                                <div className="absolute inset-0 bg-blue-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             </div>
 
-                            <div className="flex justify-between items-end border-b border-blue-50 pb-4 group-hover:border-blue-200 transition-colors duration-500 px-2">
+                            {/* Detail teks bawah card */}
+                            <div className="flex justify-between items-start px-1">
                                 <div>
-                                    <h4 className="text-lg font-bold text-blue-950 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
+                                    <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-200">
                                         {work.title}
                                     </h4>
-                                    <p className="text-xs text-blue-400 uppercase tracking-widest font-medium">
-                                        / {work.desc}
+                                    <p className="text-xs text-blue-500 font-medium mt-0.5">
+                                        {work.desc}
                                     </p>
                                 </div>
-                                <span className="text-sm font-mono text-blue-200 group-hover:text-blue-400 transition-colors duration-300 font-bold">
+                                <span className="text-xs font-mono text-slate-400 font-medium">
                                     '{work.year.slice(-2)}
                                 </span>
                             </div>
@@ -113,29 +87,27 @@ const GalleryPage = () => {
                 </div>
             </div>
 
-            {/* Section: All Projects Slider */}
+            {/* Section 2: All Projects Slider */}
             <div className="relative">
-                <div className="flex items-center gap-4 mb-8">
-                    <h2 className="text-xl md:text-2xl font-bold text-blue-900 tracking-tighter uppercase text-center md:text-left w-full md:w-auto">
-                        All Projects
-                    </h2>
-                    <div className="hidden md:block h-px flex-1 bg-blue-100"></div>
-                </div>
+                <h2 className="text-lg font-bold text-slate-800 tracking-tight uppercase mb-6">
+                    All Projects
+                </h2>
 
+                {/* Tombol Navigasi Slider */}
                 <button
                     onClick={() => scroll("left")}
-                    className="absolute left-[-20px] top-[60%] -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/90 backdrop-blur-md border border-blue-100 flex items-center justify-center text-blue-600 shadow-xl cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95 opacity-0 group-hover/section:opacity-100"
+                    className="absolute left-[-15px] top-[55%] -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white text-blue-600 border border-slate-200 flex items-center justify-center shadow-md cursor-pointer transition-all hover:bg-blue-600 hover:text-white hover:border-blue-600 opacity-0 group-hover/section:opacity-100"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                     </svg>
                 </button>
 
                 <button
                     onClick={() => scroll("right")}
-                    className="absolute right-[-20px] top-[60%] -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/90 backdrop-blur-md border border-blue-100 flex items-center justify-center text-blue-600 shadow-xl cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95 opacity-0 group-hover/section:opacity-100"
+                    className="absolute right-[-15px] top-[55%] -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white text-blue-600 border border-slate-200 flex items-center justify-center shadow-md cursor-pointer transition-all hover:bg-blue-600 hover:text-white hover:border-blue-600 opacity-0 group-hover/section:opacity-100"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>
                 </button>
@@ -144,34 +116,31 @@ const GalleryPage = () => {
                     ref={sliderRef}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
-                    className="-mx-6 px-6 flex gap-6 overflow-x-auto md:mx-0 md:px-2 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden w-screen md:w-full"
+                    className="-mx-4 px-4 flex gap-6 overflow-x-auto md:mx-0 md:px-1 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden w-full py-2"
                 >
                     {works.map((work, index) => (
                         <div
                             key={`${work.id}-${index}`}
                             onClick={() => setSelectedProject(work)}
-                            className="w-[75%] sm:w-[50%] md:w-[35%] lg:w-[22%] snap-center flex-shrink-0 flex flex-col group cursor-pointer"
+                            className="w-[75%] sm:w-[45%] md:w-[28%] lg:w-[22%] snap-center flex-shrink-0 flex flex-col group cursor-pointer bg-white border border-slate-100 hover:border-blue-500 p-2.5 rounded-xl transition-all duration-300 shadow-sm"
                         >
-                            <div className="w-full aspect-[16/10] rounded-xl overflow-hidden bg-stone-200 shadow-sm mb-3 relative">
+                            <div className="w-full aspect-[16/10] rounded-lg overflow-hidden bg-slate-50 mb-3">
                                 <img
                                     src={work.src}
                                     alt={work.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    className="w-full h-full object-cover"
                                     draggable="false"
                                 />
-                                <div className="absolute inset-0 bg-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-[10px] font-bold shadow-lg">VIEW DETAIL</span>
-                                </div>
                             </div>
                             <div className="flex flex-col px-1">
-                                <h3 className="text-[11px] font-bold text-blue-950 uppercase tracking-tighter truncate">
+                                <h3 className="text-xs font-bold text-slate-900 truncate group-hover:text-blue-600 transition-colors">
                                     {work.title}
                                 </h3>
-                                <div className="flex justify-between items-center mt-0.5">
-                                    <p className="text-[10px] text-blue-600/70 truncate">
+                                <div className="flex justify-between items-center mt-1">
+                                    <p className="text-[11px] text-slate-500 truncate max-w-[75%]">
                                         {work.desc}
                                     </p>
-                                    <span className="text-[10px] font-medium text-blue-300/80 font-mono">
+                                    <span className="text-[10px] text-slate-400 font-mono">
                                         {work.year}
                                     </span>
                                 </div>
@@ -181,72 +150,71 @@ const GalleryPage = () => {
                 </div>
             </div>
 
-            {/* PROJECT DETAIL MODAL */}
+            {/* Modal Detail Proyek Minimalis */}
             {selectedProject && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 animate-in fade-in duration-300">
-                    <div className="absolute inset-0 bg-blue-950/40 backdrop-blur-md" onClick={() => setSelectedProject(null)}></div>
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10">
+                    <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={() => setSelectedProject(null)}></div>
 
                     <div
-                        className="relative w-full max-w-5xl max-h-[90vh] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row animate-in zoom-in-95 duration-300"
+                        className="relative w-full max-w-4xl max-h-[85vh] bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-slate-100"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {/* Left: Image Gallery */}
-                        <div className="w-full md:w-3/5 h-64 md:h-auto bg-slate-100 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                            <div className="flex flex-col">
-                                {selectedProject.youtube && (
-                                    <div className="relative aspect-video w-full bg-black">
-                                        <iframe
-                                            className="absolute inset-0 w-full h-full"
-                                            src={getYouTubeEmbedUrl(selectedProject.youtube)}
-                                            title={selectedProject.title}
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen
-                                        ></iframe>
-                                    </div>
-                                )}
-                                {selectedProject.images?.map((img, i) => (
-                                    <img key={i} src={img} alt={`${selectedProject.title} ${i}`} className="w-full object-cover border-b border-white" />
-                                ))}
-                            </div>
+                        {/* Media Section (Kiri) */}
+                        <div className="w-full md:w-3/5 h-56 md:h-auto bg-slate-950 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden border-r border-slate-100">
+                            {selectedProject.youtube ? (
+                                <div className="relative aspect-video w-full bg-black h-full flex items-center">
+                                    <iframe
+                                        className="absolute inset-0 w-full h-full"
+                                        src={getYouTubeEmbedUrl(selectedProject.youtube)}
+                                        title={selectedProject.title}
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
+                            ) : (
+                                <div className="flex flex-col">
+                                    {selectedProject.images?.map((img, i) => (
+                                        <img key={i} src={img} alt={`${selectedProject.title} ${i}`} className="w-full object-cover border-b border-slate-100" />
+                                    )) || <img src={selectedProject.src} alt={selectedProject.title} className="w-full h-full object-cover" />}
+                                </div>
+                            )}
                         </div>
 
-                        {/* Right: Info */}
-                        <div className="w-full md:w-2/5 p-8 md:p-12 flex flex-col overflow-y-auto">
-                            <button
-                                onClick={() => setSelectedProject(null)}
-                                className="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-red-50 hover:text-red-500 transition-all z-20"
-                            >
-                                <FaTimes />
-                            </button>
+                        {/* Info Section (Kanan) */}
+                        <div className="w-full md:w-2/5 p-6 md:p-8 flex flex-col overflow-y-auto bg-white justify-between">
+                            <div>
+                                <div className="flex justify-between items-start mb-4">
+                                    <div>
+                                        <p className="text-[11px] font-bold text-blue-600 uppercase tracking-wider mb-0.5">
+                                            {selectedProject.desc}
+                                        </p>
+                                        <h2 className="text-xl font-bold text-slate-900 tracking-tight">
+                                            {selectedProject.title}
+                                        </h2>
+                                    </div>
+                                    <button
+                                        onClick={() => setSelectedProject(null)}
+                                        className="text-slate-400 hover:text-slate-600 p-1 transition-colors"
+                                    >
+                                        <FaTimes size={16} />
+                                    </button>
+                                </div>
 
-                            <p className="text-xs uppercase tracking-[0.3em] text-blue-500 font-bold mb-4">
-                                {selectedProject.desc}
-                            </p>
-
-                            <h2 className="text-4xl font-black text-slate-900 tracking-tighter leading-none mb-6">
-                                {selectedProject.title}
-                            </h2>
-
-                            <div className="flex items-center gap-4 mb-8">
-                                <span className="px-3 py-1 bg-slate-100 rounded-full text-xs font-bold text-slate-500">
-                                    {selectedProject.year}
-                                </span>
-                                <div className="h-px flex-1 bg-slate-100"></div>
+                                <p className="text-slate-500 text-xs leading-relaxed mb-6">
+                                    {selectedProject.longDesc || "Explore the creative process and engineering implementation behind this work."}
+                                </p>
                             </div>
 
-                            <p className="text-slate-600 leading-relaxed mb-10 text-sm">
-                                {selectedProject.longDesc || "Explore the creative process and execution behind this featured work."}
-                            </p>
-
-                            <div className="mt-auto space-y-4">
+                            {/* Action Buttons */}
+                            <div className="space-y-2 pt-4 border-t border-slate-100">
                                 {selectedProject.demo && (
                                     <a
                                         href={selectedProject.demo}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="flex items-center justify-center gap-3 w-full py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-100"
+                                        className="flex items-center justify-center gap-2 w-full py-2.5 bg-blue-600 text-white rounded-lg font-semibold text-xs tracking-wide hover:bg-blue-700 transition-colors shadow-sm"
                                     >
-                                        <FaExternalLinkAlt size={20} />
+                                        <FaExternalLinkAlt size={10} />
                                         LIVE DEMO
                                     </a>
                                 )}
@@ -255,10 +223,10 @@ const GalleryPage = () => {
                                     href={selectedProject.github}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="flex items-center justify-center gap-3 w-full py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg shadow-slate-200"
+                                    className="flex items-center justify-center gap-2 w-full py-2.5 bg-white border border-slate-300 text-slate-700 rounded-lg font-semibold text-xs tracking-wide hover:bg-slate-50 transition-colors"
                                 >
-                                    <FaGithub size={20} />
-                                    VIEW ON GITHUB
+                                    <FaGithub size={12} />
+                                    VIEW GITHUB
                                 </a>
 
                                 {selectedProject.youtube && (
@@ -266,19 +234,12 @@ const GalleryPage = () => {
                                         href={selectedProject.youtube}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="flex items-center justify-center gap-3 w-full py-4 bg-red-600 text-white rounded-2xl font-bold hover:bg-red-700 transition-all shadow-lg shadow-red-200"
+                                        className="flex items-center justify-center gap-2 w-full py-2.5 bg-red-600 text-white rounded-lg font-semibold text-xs tracking-wide hover:bg-red-700 transition-colors"
                                     >
-                                        <FaYoutube size={20} />
-                                        WATCH ON YOUTUBE
+                                        <FaYoutube size={12} />
+                                        WATCH VIDEO
                                     </a>
                                 )}
-
-                                <button
-                                    onClick={() => setSelectedProject(null)}
-                                    className="flex items-center justify-center gap-2 w-full py-4 bg-white border border-slate-200 text-slate-600 rounded-2xl font-bold hover:bg-slate-50 transition-all"
-                                >
-                                    CLOSE PREVIEW
-                                </button>
                             </div>
                         </div>
                     </div>
