@@ -82,7 +82,7 @@ const AboutPage = () => {
             {coreSkills.map((skill, index) => (
               <span
                 key={index}
-                className="px-4 py-1.5 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-sm"
+                className="px-4 py-1.5 bg-[#4A90FF] text-white text-xs font-semibold rounded-full shadow-sm"
               >
                 {skill}
               </span>
