@@ -150,7 +150,6 @@ const GalleryPage = () => {
                 </div>
             </div>
 
-            {/* Modal Detail Proyek Minimalis */}
             {selectedProject && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10">
                     <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={() => setSelectedProject(null)}></div>

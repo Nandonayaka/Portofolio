@@ -12,7 +12,6 @@ export const useGalleryScroll = (autoPlayInterval = 3000) => {
                     const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
                     const scrollAmount = clientWidth / 5;
 
-                    // Infinite loop logic
                     if (scrollLeft + clientWidth >= scrollWidth - 10) {
                         sliderRef.current.scrollTo({ left: scrollWidth / 4, behavior: "auto" });
                     } else {
