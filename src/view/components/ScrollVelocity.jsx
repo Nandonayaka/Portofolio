@@ -23,8 +23,16 @@ function useElementWidth(ref) {
       }
     }
     updateWidth();
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
+    let timer;
+    const handleResize = () => {
+      clearTimeout(timer);
+      timer = setTimeout(updateWidth, 100);
+    };
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', handleResize);
+    };
   }, [ref]);
 
   return width;
@@ -35,9 +43,9 @@ function VelocityText({
   baseVelocity = 100,
   scrollContainerRef,
   className = '',
-  damping = 50,
-  stiffness = 400,
-  numCopies = 6,
+  damping = 30,
+  stiffness = 200,
+  numCopies = 4,
   velocityMapping = DEFAULT_VELOCITY_MAPPING,
   parallaxClassName = '',
   scrollerClassName = '',
@@ -49,8 +57,8 @@ function VelocityText({
   const { scrollY } = useScroll(scrollOptions);
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
-    damping: damping ?? 50,
-    stiffness: stiffness ?? 400
+    damping: damping ?? 30,
+    stiffness: stiffness ?? 200
   });
   const velocityFactor = useTransform(
     smoothVelocity,
@@ -73,18 +81,19 @@ function VelocityText({
   useAnimationFrame((t, delta) => {
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
-    if (velocityFactor.get() < 0) {
+    const vf = velocityFactor.get();
+    if (vf < 0) {
       directionFactor.current = -1;
-    } else if (velocityFactor.get() > 0) {
+    } else if (vf > 0) {
       directionFactor.current = 1;
     }
 
-    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+    moveBy += directionFactor.current * moveBy * vf;
     baseX.set(baseX.get() + moveBy);
   });
 
   const spans = [];
-  const count = numCopies ?? 6;
+  const count = numCopies ?? 4;
   for (let i = 0; i < count; i++) {
     spans.push(
       <span className={`flex-shrink-0 ${className}`} key={i} ref={i === 0 ? copyRef : null}>
@@ -96,7 +105,7 @@ function VelocityText({
   return (
     <div className={`${parallaxClassName} relative overflow-hidden`} style={parallaxStyle}>
       <motion.div
-        className={`${scrollerClassName} flex whitespace-nowrap text-center font-sans text-4xl font-bold tracking-[-0.02em] drop-shadow md:text-[5rem] md:leading-[5rem]`}
+        className={`${scrollerClassName} flex whitespace-nowrap text-center font-sans text-4xl font-bold tracking-[-0.02em] drop-shadow md:text-[5rem] md:leading-[5rem] will-change-transform transform-gpu`}
         style={{ x, ...scrollerStyle }}
       >
         {spans}

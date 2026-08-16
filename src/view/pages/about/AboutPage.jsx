@@ -250,11 +250,12 @@ const AboutPage = () => {
             </div>
 
             {/* SCROLL VELOCITY TEXT SECTION BELOW ABOUT */}
-            <div className="mt-40 py-8 px-4 overflow-hidden select-none">
+            <div className="mt-28 sm:mt-40 py-6 sm:py-8 px-4 overflow-hidden select-none">
                 <ScrollVelocity
                     texts={["FrontEnd", "Developer"]}
-                    velocity={80}
-                    className="text-[#4A90FF]/35 font-serif italic text-6xl md:text-8xl lg:text-9xl uppercase tracking-widest pointer-events-none"
+                    velocity={50}
+                    numCopies={3}
+                    className="text-[#4A90FF]/35 font-serif italic text-5xl sm:text-7xl md:text-8xl lg:text-9xl uppercase tracking-widest pointer-events-none will-change-transform"
                 />
             </div>
         </div>
