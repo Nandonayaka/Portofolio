@@ -1,5 +1,6 @@
 import Button from "../../components/Button";
 import AboutParticle from "../../components/particle/AboutParticle";
+import ScrollVelocity from "../../components/ScrollVelocity";
 
 const AboutPage = () => {
     const scrollToMoreInfo = () => {
@@ -43,7 +44,7 @@ const AboutPage = () => {
                         />
 
                         {/* DESKRIPSI */}
-                        <div className="space-y-5 text-gray-700 text-base lg:text-lg leading-8">
+                        <div className="space-y-5 text-gray-700 text-base lg:text-lg leading-8 font-serif">
                             <p>
                                 Halo! Saya adalah seorang Frontend Developer yang
                                 memiliki minat besar dalam membangun website dan
@@ -103,6 +104,15 @@ const AboutPage = () => {
                     </div>
 
                 </div>
+            </div>
+
+            {/* SCROLL VELOCITY TEXT SECTION BELOW ABOUT */}
+            <div className="mt-40 py-8 px-4 overflow-hidden select-none">
+                <ScrollVelocity
+                    texts={["FrontEnd", "Developer"]}
+                    velocity={80}
+                    className="text-[#4A90FF]/35 font-serif italic text-6xl md:text-8xl lg:text-9xl uppercase tracking-widest pointer-events-none"
+                />
             </div>
         </div>
     );
