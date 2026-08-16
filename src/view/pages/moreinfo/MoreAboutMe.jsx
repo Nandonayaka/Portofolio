@@ -1,52 +1,16 @@
-import { useState, useRef, useEffect } from "react";
 import {
     FaYoutube,
     FaGithub,
     FaSpotify,
-    FaHeart,
-    FaStepBackward,
-    FaStepForward,
-    FaPause,
-    FaPlay,
-    FaSyncAlt,
     FaWhatsapp,
 } from "react-icons/fa";
 
 import { MdEmail } from "react-icons/md";
 import AboutParticle from "../../components/particle/AboutParticle";
 import { AchievmentsMocks } from "../../../core/mocks/AchievmentsMocks";
+import ProfileCard from "../../components/ProfileCard";
 
 export default function MoreAboutMe() {
-    const audioRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [isLooping, setIsLooping] = useState(false);
-    const [progress, setProgress] = useState(0);
-
-    const togglePlay = () => {
-        if (isPlaying) {
-            audioRef.current.pause();
-        } else {
-            audioRef.current.play();
-        }
-        setIsPlaying(!isPlaying);
-    };
-
-    const toggleLoop = () => {
-        setIsLooping(!isLooping);
-    };
-
-    const handleTimeUpdate = () => {
-        const current = audioRef.current.currentTime;
-        const duration = audioRef.current.duration;
-        if (duration) {
-            setProgress((current / duration) * 100);
-        }
-    };
-
-    const handleEnded = () => {
-        setIsPlaying(false);
-        setProgress(0);
-    };
     return (
         <section className="relative pt-32 pb-16 px-6 overflow-hidden bg-gradient-to-b from-[#f8fbff] to-[#eef5ff]">
 
@@ -57,7 +21,7 @@ export default function MoreAboutMe() {
             <div className="max-w-7xl mx-auto mb-20">
 
                 {/* Heading */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-16">
                     <p className="uppercase tracking-[0.3em] text-blue-400 text-sm">
                         About Me
                     </p>
@@ -67,87 +31,20 @@ export default function MoreAboutMe() {
                     </h2>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-                    {/* LEFT */}
-                    <div className="flex flex-col items-center lg:items-start" data-aos="fade-right">
-
-                        {/* Photo */}
-                        <div className="relative w-full max-w-sm">
-
-                            <div className="absolute -right-8 top-10 w-20 h-20 rounded-full bg-blue-200 blur-xl" />
-
-                            <img
-                                src="/images/memusic.png"
-                                alt="profile"
-                                className="w-full aspect-square object-cover shadow-2xl border-4 border-white"
-                            />
-                        </div>
-
-                        {/* Music Card */}
-                        <div className="mt-2 w-full max-w-sm bg-blue-50/50 backdrop-blur-md rounded-3xl p-6 shadow-sm border border-white" data-aos="fade-right">
-                            <audio
-                                ref={audioRef}
-                                src="/music.mp3"
-                                loop={isLooping}
-                                onTimeUpdate={handleTimeUpdate}
-                                onEnded={handleEnded}
-                            />
-                            <div className="flex gap-4">
-                                <div>
-                                    <h3 className="font-bold text-slate-800 tracking-tight">
-                                        d4vd - Here With Me
-                                    </h3>
-                                    <p className="text-xs text-blue-500 font-medium uppercase tracking-widest mt-1">
-                                        My Favorite Song
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Progress */}
-                            <div className="mt-6">
-                                <div className="h-1.5 bg-blue-100 rounded-full overflow-hidden cursor-pointer" onClick={(e) => {
-                                    const rect = e.currentTarget.getBoundingClientRect();
-                                    const x = e.clientX - rect.left;
-                                    const clickedValue = (x / rect.width) * audioRef.current.duration;
-                                    audioRef.current.currentTime = clickedValue;
-                                }}>
-                                    <div
-                                        className="h-full bg-blue-500 rounded-full transition-all duration-100"
-                                        style={{ width: `${progress}%` }}
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Controls */}
-                            <div className="flex items-center justify-center gap-7 mt-8">
-                                <button
-                                    onClick={toggleLoop}
-                                    className={`transition-colors ${isLooping ? 'text-blue-500' : 'text-slate-400'} hover:text-blue-600`}
-                                >
-                                    <FaSyncAlt size={16} />
-                                </button>
-                                <button className="text-slate-400 hover:text-blue-500 transition-colors">
-                                    <FaStepBackward size={20} />
-                                </button>
-
-                                <button
-                                    onClick={togglePlay}
-                                    className="w-16 h-16 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-xl shadow-blue-200 hover:scale-110 active:scale-95 transition-all"
-                                >
-                                    {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} className="ml-1" />}
-                                </button>
-
-                                <button className="text-slate-400 hover:text-blue-500 transition-colors">
-                                    <FaStepForward size={20} />
-                                </button>
-
-                                <button className="text-red-400 hover:text-red-500 transition-colors">
-                                    <FaHeart size={20} />
-                                </button>
-                            </div>
-                        </div>
-
+                    {/* LEFT: 3D TILT IMAGE CARD */}
+                    <div className="flex justify-center items-center w-full" data-aos="fade-right">
+                        <ProfileCard
+                            name=""
+                            title=""
+                            avatarUrl="/images/memusic.png"
+                            showUserInfo={false}
+                            enableTilt={true}
+                            enableMobileTilt={false}
+                            behindGlowEnabled={true}
+                            behindGlowColor="rgba(59, 130, 246, 0.5)"
+                        />
                     </div>
 
                     {/* RIGHT */}

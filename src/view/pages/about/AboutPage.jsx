@@ -1,6 +1,8 @@
+import { useMemo } from "react";
 import Button from "../../components/Button";
 import AboutParticle from "../../components/particle/AboutParticle";
 import ScrollVelocity from "../../components/ScrollVelocity";
+import Lanyard from "../../components/Lanyard";
 
 const AboutPage = () => {
     const scrollToMoreInfo = () => {
@@ -10,6 +12,145 @@ const AboutPage = () => {
         }
     };
 
+    // Custom back face texture: White background with Google logo & Frontend Developer
+    const nandoBackImage = useMemo(() => {
+        if (typeof window === 'undefined') return null;
+        const canvas = document.createElement('canvas');
+        canvas.width = 600;
+        canvas.height = 900;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return null;
+
+        // Pure clean white background
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, 600, 900);
+
+        // Soft subtle border framing
+        ctx.strokeStyle = 'rgba(0, 0, 0, 0.08)';
+        ctx.lineWidth = 4;
+        ctx.strokeRect(25, 25, 550, 850);
+
+        ctx.strokeStyle = 'rgba(66, 133, 244, 0.2)';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(40, 40, 520, 820);
+
+        // Draw Google Logo
+        ctx.save();
+        ctx.font = 'bold 96px "Google Sans", Roboto, Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        const gLetters = [
+            { c: 'G', color: '#4285f4' },
+            { c: 'o', color: '#ea4335' },
+            { c: 'o', color: '#fbbc04' },
+            { c: 'g', color: '#4285f4' },
+            { c: 'l', color: '#34a853' },
+            { c: 'e', color: '#ea4335' }
+        ];
+
+        let totalWidth = 0;
+        gLetters.forEach(item => {
+            totalWidth += ctx.measureText(item.c).width;
+        });
+
+        let xCur = 300 - totalWidth / 2;
+        const logoY = 410;
+        gLetters.forEach(item => {
+            const w = ctx.measureText(item.c).width;
+            ctx.fillStyle = item.color;
+            ctx.fillText(item.c, xCur + w / 2, logoY);
+            xCur += w;
+        });
+        ctx.restore();
+
+        // Draw "Frontend Developer" below Google logo
+        ctx.save();
+        ctx.fillStyle = '#5f6368';
+        ctx.font = '600 28px "Google Sans", Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('Frontend Developer', 300, 495);
+        ctx.restore();
+
+        return canvas.toDataURL('image/png');
+    }, []);
+
+    // Official white Google Developers lanyard strap texture
+    const googleDevLanyardStrap = useMemo(() => {
+        if (typeof window === 'undefined') return null;
+        const canvas = document.createElement('canvas');
+        canvas.width = 2048;
+        canvas.height = 512;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return null;
+
+        // Clean white strap background
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, 2048, 512);
+
+        // Soft subtle top & bottom edge shading
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, 2048, 8);
+        ctx.fillRect(0, 504, 2048, 8);
+
+        // Repeat Google Developers 1 time across the 2048px strap
+        const repeatCount = 1;
+        const segmentWidth = 2048 / repeatCount;
+
+        for (let i = 0; i < repeatCount; i++) {
+            const originX = i * segmentWidth + segmentWidth / 2;
+            const centerY = 256;
+
+            ctx.save();
+            ctx.translate(originX, centerY);
+            ctx.textBaseline = 'middle';
+
+            const gLetters = [
+                { c: 'G', color: '#4285f4' },
+                { c: 'o', color: '#ea4335' },
+                { c: 'o', color: '#fbbc04' },
+                { c: 'g', color: '#4285f4' },
+                { c: 'l', color: '#34a853' },
+                { c: 'e', color: '#ea4335' }
+            ];
+
+            const devText = ' Developers';
+
+            ctx.font = 'bold 150px "Google Sans", Arial, sans-serif';
+            let googleWidth = 0;
+            gLetters.forEach(item => {
+                googleWidth += ctx.measureText(item.c).width;
+            });
+
+            ctx.font = '500 140px "Google Sans", Arial, sans-serif';
+            const devWidth = ctx.measureText(devText).width;
+
+            const totalWidth = googleWidth + devWidth;
+            let xCur = -totalWidth / 2;
+
+            // Draw "Google" in brand colors
+            ctx.font = 'bold 150px "Google Sans", Arial, sans-serif';
+            ctx.textAlign = 'center';
+            gLetters.forEach(item => {
+                const w = ctx.measureText(item.c).width;
+                ctx.fillStyle = item.color;
+                ctx.fillText(item.c, xCur + w / 2, 0);
+                xCur += w;
+            });
+
+            // Draw "Developers" in dark slate
+            ctx.fillStyle = '#3c4043';
+            ctx.font = '500 140px "Google Sans", Arial, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(devText, xCur, 0);
+
+            ctx.restore();
+        }
+
+        return canvas.toDataURL('image/png');
+    }, []);
+
     return (
         <div className="py-20 px-6 lg:px-16 relative overflow-hidden">
             <AboutParticle />
@@ -17,22 +158,24 @@ const AboutPage = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
-                    {/* FOTO */}
+                    {/* 3D LANYARD COMPONENT */}
                     <div
-                        className="w-full lg:w-[40%] flex justify-center"
+                        className="w-full lg:w-[45%] flex justify-center items-center h-[550px] lg:h-[650px]"
                         data-aos="fade-right"
                     >
-                        <img
-                            src="/images/me.png"
-                            alt="Me"
-                            className="w-[90%] lg:w-full max-w-[700px] drop-shadow-xl"
-                            draggable="false"
+                        <Lanyard
+                            position={[0, 0, 13.5]}
+                            gravity={[0, -40, 0]}
+                            frontImage="/images/me.png"
+                            backImage={nandoBackImage}
+                            lanyardImage={googleDevLanyardStrap}
+                            lanyardWidth={2.4}
                         />
                     </div>
 
                     {/* KONTEN */}
                     <div
-                        className="w-full lg:w-[60%]"
+                        className="w-full lg:w-[55%]"
                         data-aos="fade-left"
                     >
                         {/* JUDUL */}
