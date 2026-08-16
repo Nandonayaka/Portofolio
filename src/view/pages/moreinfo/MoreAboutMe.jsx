@@ -48,13 +48,13 @@ export default function MoreAboutMe() {
         setProgress(0);
     };
     return (
-        <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-[#f8fbff] to-[#eef5ff]">
+        <section className="relative pt-32 pb-16 px-6 overflow-hidden bg-gradient-to-b from-[#f8fbff] to-[#eef5ff]">
 
             {/* Blur Decoration */}
             <div className="absolute top-20 left-20 w-72 h-72 bg-blue-300/20 rounded-full blur-3xl" />
             <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl" />
 
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto mb-20">
 
                 {/* Heading */}
                 <div className="text-center mb-20">
